@@ -16,20 +16,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ArrayList<Word> earthquakes = QueryUtils.earthquakes();
-
-        
+        ArrayList<Word> earthquakes = QueryUtils.earthquake();
         // Find a reference to the {@link ListView} in the layout
         ListView listView = (ListView) findViewById(R.id.list);
-
-        // Create a new {@link ArrayAdapter} of earthquakes
         WordAdapter adapter = new WordAdapter(this,earthquakes);
-
         listView.setAdapter(adapter);
-
-
-        // Set the adapter on the {@link ListView}
-        // so the list can be populated in the user interface
-
     }
 }

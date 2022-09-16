@@ -73,26 +73,26 @@ public class WordAdapter extends ArrayAdapter<Word> {
             listItemView = LayoutInflater.from(getContext()).inflate(
                     R.layout.list_view, parent, false);
         }
-        Word cword = getItem(position);
+        Word word = getItem(position);
 
         TextView richer = (TextView) listItemView.findViewById(R.id.magnitude);
-        String formattedMagnitude = formatMagnitude(cword.getmMagnitude());
+        String formattedMagnitude = formatMagnitude(word.getmMagnitude());
         richer.setText((formattedMagnitude));
         GradientDrawable magnitudeCircle = (GradientDrawable) richer.getBackground();
-        int magnitudeColor = getMagnitudeColor(cword.getmMagnitude());
+        int magnitudeColor = getMagnitudeColor(word.getmMagnitude());
         magnitudeCircle.setColor(magnitudeColor);
 
         TextView city = (TextView) listItemView.findViewById(R.id.place1);
-        city.setText(cword.getmPLace1());
+        city.setText(word.getmPLace1());
 
         TextView city1 = (TextView) listItemView.findViewById(R.id.place2);
-        city1.setText(cword.getmPlace2());
+        city1.setText(word.getmPlace2());
 
         TextView date = (TextView) listItemView.findViewById(R.id.date);
-        date.setText(cword.getMdate());
+        date.setText(word.getMdate());
 
         TextView time = (TextView) listItemView.findViewById(R.id.time);
-        time.setText(cword.getmTime());
+        time.setText(word.getmTime());
 
         return listItemView;
     }

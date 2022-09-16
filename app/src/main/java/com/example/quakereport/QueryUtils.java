@@ -22,16 +22,14 @@ public class QueryUtils {
     private QueryUtils() {
     }
 
-    public static ArrayList<Word> earthquakes(){
+    public static ArrayList<Word> earthquake(){
 
         ArrayList<Word> earthquakes = new ArrayList<>();
 
         try{
-
-
             JSONObject baseJsonResponse = new JSONObject(SAMPLE_JSON_RESPONSE);
             JSONArray earthquakeArray = baseJsonResponse.getJSONArray("features");
-//
+
             for (int i = 0; i < SAMPLE_JSON_RESPONSE.length(); i++) {
                 JSONObject currentEarthquake = earthquakeArray.getJSONObject(i);
                 JSONObject properties = currentEarthquake.getJSONObject("properties");
